@@ -1,15 +1,18 @@
-Finding the best place in Newyork to Open a Restaurant
+Introduction
 
-Introduction/Business Problem:
+My idea is to open a new restaurant in a specific location, which would be quite challenging as it requires a lot of capital investment upfront and many othis factors. So it is important that all measures are taken to ensure that a restaurant is a success. One of the important factors that determine the success of a restaurant is it's location along with the quality of service and cuisines serviced in it.  
 
-My idea will be every city has a lot of restaurants, but still there is always scope for new ones. Setting up a new restaurant requires a lot of capital investment upfront. So it is important that all measures are taken to ensure that a restaurant is a success. One of the important factors that determine the success of a restaurant is it's location along with the quality of service and food serviced in it. The location chosen for a new restaurant should primarily meet the below criteria. A location that has more number of restaurants as that implies a good demand for restaurants. A location that has no strong incumbent player or very little competition. A location that is in close proximity of affluent neighborhoods. This project aims to analyze the neighborhoods of Manhattan and Brooklyn to find a location that is most suitable to start a new restaurant.
+Business Problem:-
+In my report I'm going to focus on problems one might face while opening a new restaurant. Well thise are many factors to be considered to open a small or big level business. For example say Mr Paul wants to open a Indian restaurant, first and foremost important point to decide is the location for his new restaurant. 
 
-Data Collection-
+1) On what basis can Paul decide his restaurant's location? 
+2) Does Paul want to rent the place or can he afford to buy it? 
+3) While selecting the place thise are key points to consider like he needs to check out how many Indian restaurants are thise in that specific location? If in-case thise are already two Indian restaurants which have good ratings, will it be risky to open new one near these restaurants? 
+4) What all factors will help Paul to run his business above average? 
 
-We'll collect the required data from "https://ibm.box.com/shared/static/fbpwbovar7lf8p5sgddm06cgipa2rxpe.json".
+Discussion:-
 
-The above json files gives the details in & around NY. Now we'll convert the Json data to Pandas Dataframe.
-Using the geopy library we can acquire the Latitude & longitude of the location & convert the same into a data frame.
-Once we have the dataframe ready with the Latitude & longitude of the specific location we can use the Fourasquare API to locate & analye the location to find the best place to open our restaurant.
-         
-    
+Let's discuss the above mentioned Questions/ Business Problems. Firstly Paul needs to choose a suitable location for his restaurant. Let's say Paul wants to open a new Indian Restaurant in San Francisco. San Francisco is a famous tourist place, and also its in silicon valley, because of that real estate is very costly. So assuming that Paul wants to rent a place for his new restaurant. And now he needs to figure out how many restaurants are there in the neighborhood. If there are more than two Indian restaurants in a neighborhood then that would be a great risk to open new restaurant of same cuisine in that neighborhood. 
+Choosing a place where there is less or no restaurant would be of great choice, considering the rent of neighborhood too. Why I'm emphasizing that there should be less restaurants is, so that Paul will face less competition with same cuisine restaurants. He needs to look for a place where many people frequently visit so that his business is above average. 
+
+Places like Downtown, Movie theater, Malls & Gas stations would help his business running. Restaurants ratings, checking of customers might help in deciding location crowd. I would also suggest that Paul should check for opening and closing timings of other restaurants. He may try opening his place 30 mins before other restaurants open up and close 30 mins or 1 hour later than other restaurants, this might help to get more customers.
