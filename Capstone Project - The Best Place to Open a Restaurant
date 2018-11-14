@@ -10,9 +10,26 @@ In my report I'm going to focus on problems one might face while opening a new r
 3) While selecting the place thise are key points to consider like he needs to check out how many Indian restaurants are thise in that specific location? If in-case thise are already two Indian restaurants which have good ratings, will it be risky to open new one near these restaurants? 
 4) What all factors will help Paul to run his business above average? 
 
-Discussion:-
-
-Let's discuss the above mentioned Questions/ Business Problems. Firstly Paul needs to choose a suitable location for his restaurant. Let's say Paul wants to open a new Indian Restaurant in San Francisco. San Francisco is a famous tourist place, and also its in silicon valley, because of that real estate is very costly. So assuming that Paul wants to rent a place for his new restaurant. And now he needs to figure out how many restaurants are there in the neighborhood. If there are more than two Indian restaurants in a neighborhood then that would be a great risk to open new restaurant of same cuisine in that neighborhood. 
+Now let's discuss the above mentioned Questions/ Business Problems. Firstly Paul needs to choose a suitable location for his restaurant. Let's say Paul wants to open a new Indian Restaurant in San Francisco. San Francisco is a famous tourist place, and also its in silicon valley, because of that real estate is very costly. So assuming that Paul wants to rent a place for his new restaurant. And now he needs to figure out how many restaurants are there in the neighborhood. If there are more than two Indian restaurants in a neighborhood then that would be a great risk to open new restaurant of same cuisine in that neighborhood. 
 Choosing a place where there is less or no restaurant would be of great choice, considering the rent of neighborhood too. Why I'm emphasizing that there should be less restaurants is, so that Paul will face less competition with same cuisine restaurants. He needs to look for a place where many people frequently visit so that his business is above average. 
 
 Places like Downtown, Movie theater, Malls & Gas stations would help his business running. Restaurants ratings, checking of customers might help in deciding location crowd. I would also suggest that Paul should check for opening and closing timings of other restaurants. He may try opening his place 30 mins before other restaurants open up and close 30 mins or 1 hour later than other restaurants, this might help to get more customers.
+
+Data:- 
+
+As Paul is planning to open a restaurant in San Francisco, and assuming that he is going to rent a place. So first I took the rent dataset from (https://web.archive.org/web/20180822060556/https://www.rentcafe.com/average-rent-market-trends/us/ca/san-francisco/ , https://www.zillow.com/research/data/) according to neighborhood wise, so that it's easy for us to check the rent data neighborhood wise.I have cleaned the dataset and I'm going to compare the rent data this year as we just need to analyse the current rent range. Since from the webpages I didn't get all neighborhood's rent data, I planned to test only for the data I have retrieved.
+
+I'm going to use the formula to find which neighborhood is good to open a new restaurant.
+
+Final-Score = (rent-score)0.6+(rating-score)0.4 -> Closer the finalScore value to 1, better choice of neighborhood.
+
+Now let's see what is Rent-Score and Rating-Score means.
+
+Rent-Score can be calculated by (maxrentofneighborhood-currentrentofneighborhood)/(maxrentofneighborhood-minrentofneighborhood).rent-score value for each neighborhood can be obtained from above rent dataset. 
+Rating-Score can be calculated by (maxgoodrest-currentrestratingofN)/(maxgoodrest-mingoodrest). rating-score can be calculated after retrieving information from Foursquare location.
+
+In order to calculate rating-score, we need to retrieve rating of each Indian restaurant neighborhood-wise. So let's the analyse data. Firstly we need the co-ordinates of the neighborhood's, co-ordinates or latitude & longitude can be obtained by passing the Neighborhood name value through geocoding. The restaurant details can be retrieved using search endpoint of foursquare location. For our project we need only Indian restaurant data, and in search endpoint there is a attribute called category id, i.e for each category(like Indian or Italian or Mexican Restaurant) foursquare has a defined categoryid which will help us to get the desired data. In this search response, we'll retrieve the venue id of all the Indian venues. And then pass this venue id's through venue_id endpoint to get rating of each Indian restaurant. Let's save the data in a dataframe, for further testing.
+
+Now we need to select a neighborhood in which we have to reduce the competition for our new restaurant, hence we should test with only good rating restaurants. For this I'm going to consider restaurants which have rating greater than or equal to 7 in foursquare.
+After getting counts of good rating restaurant in each neighborhood, we can calculate our rent rating now. Max and min can be calculated using respective functions. Thus we can find out the best location for Paul's restaurant in the neighborhood.
+Link to the Report in Github -> https://github.com/sandeepravi07/Capstone-Project/blob/master/Capstone%20Project%20-%20The%20Best%20Place%20to%20Open%20a%20Restaurant
